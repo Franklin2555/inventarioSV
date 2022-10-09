@@ -30,19 +30,8 @@
   <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
-<body class="hold-transition login-page">
-  <div class="login-box">
-    @include('layouts.navigation')
-
-    <!-- Page Heading -->
-    @if (isset($header))
-      <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          {{ $header }}
-        </div>
-      </header>
-    @endif
-
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
     <!-- Page Content -->
     <main>
       {{ $slot }}
