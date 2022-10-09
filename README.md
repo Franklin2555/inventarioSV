@@ -99,7 +99,7 @@ php artisan serve
 Por defecto, redirige a la siguiente url: `http://127.0.0.1:8000`
 
 ```
-Nota: Credenciales para iniciar sessión : 
+Nota: Credenciales para iniciar sessión : Uaurio: root@gmail.com.sv contraseña: 12345678
 ```
 
 # Referencias: :memo:
