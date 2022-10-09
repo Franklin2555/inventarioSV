@@ -17,6 +17,26 @@
           <a href="index3.html" class="nav-link">Inicio</a>
         </li>
       </ul>
+
+      <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <form method="POST" action="{{ route('logout') }}">
+                <!-- Authentication -->
+                @csrf
+                <a href="route('logout')" onclick="event.preventDefault();
+                                                            this.closest('form').submit();" role="menuitem"
+                  class="block px-4 py-2 text-sm text-indigo-900 font-bold transition-colors hover:bg-teal-100 dark:text-light rounded-md">
+                  Cerrar Sesion
+                </a>
+              </form>
+        </li>
+      </ul>
     </nav>
     <!-- /.navbar -->
 
