@@ -3,15 +3,15 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+        <a href="{{url('/')}}" class="h1"><b>Inventario</b>SV</a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Inicia sesión</p>
   
         <form method="POST" action="{{ route('login') }}">
           @csrf
           <div class="input-group mb-3">
-            <input id="email" name="email" type="email" class="form-control" placeholder="Email">
+            <input id="email" name="email" type="email" class="form-control" placeholder="Correo">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -20,7 +20,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
           </div>
           <div class="input-group mb-3">
-            <input id="password" name="password" type="password" class="form-control" placeholder="Password">
+            <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -29,38 +29,29 @@
           </div>
           <div class="row">
             <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
+              <div class="block mt-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
-              </div>
+            </div>
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block">Iniciar</button>
             </div>
             <!-- /.col -->
           </div>
-        </form>
-  
-        <div class="social-auth-links text-center mt-2 mb-3">
-          <a href="#" class="btn btn-block btn-primary">
-            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-          </a>
-          <a href="#" class="btn btn-block btn-danger">
-            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-          </a>
+
+          <div class="flex items-center justify-end mt-4">
+            @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    {{ __('¿Olvidó su contraseña?') }}
+                </a>
+            @endif
+
         </div>
-        <!-- /.social-auth-links -->
-  
-        <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
-        </p>
-        <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
-        </p>
-      </div>
+        </form>
       <!-- /.card-body -->
     </div>
     <!-- /.card -->

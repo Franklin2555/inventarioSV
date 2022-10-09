@@ -31,7 +31,8 @@
 </head>
 
 <body>
-  <div class="font-sans text-gray-900 antialiased">
+  <body class="hold-transition login-page">
+    <div class="login-box">
     {{ $slot }}
   </div>
 </body>
